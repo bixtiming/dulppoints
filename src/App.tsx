@@ -4,6 +4,7 @@ import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { WalletProvider } from './contexts/WalletContext';
 import { RewardsProvider } from './contexts/RewardsContext';
 import Navbar from './components/Navbar';
+import { ErrorBoundary } from './components/ErrorBoundary';
 import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
 import Games from './pages/Games';
@@ -22,6 +23,7 @@ function RootRoute() {
 
 function App() {
   return (
+  <ErrorBoundary>
     <Router>
       <AuthProvider>
         <WalletProvider>
@@ -80,6 +82,7 @@ function App() {
         </WalletProvider>
       </AuthProvider>
     </Router>
+  </ErrorBoundary>
   );
 }
 

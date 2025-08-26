@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta
+    http-equiv="Content-Security-Policy"
+    content="
+      frame-ancestors 'self';
+      default-src 'self';
+      script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.gstatic.com https://www.googleapis.com;
+      style-src 'self' 'unsafe-inline';
+      img-src 'self' data: https:;
+      font-src 'self' data:;
+      connect-src 'self'
+                   https://*.firebaseapp.com
+                   ws://localhost:*
+                   https://*.firebaseio.com
+                   https://*.firebasestorage.app
+                   https://*.firebaseapp.com
+                   https://*.firebaseio.com
+                   https://*.firebasestorage.app
+                   https://*.firebaseapp.com
+                   https://firebase.googleapis.com
+                   https://firestore.googleapis.com
+                   wss://firestore.googleapis.com
+                   https://identitytoolkit.googleapis.com
+                   https://securetoken.googleapis.com
+                   https://*.googleapis.com
+                   https://www.googleapis.com;">
+  
+    <title>Dulp Points</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

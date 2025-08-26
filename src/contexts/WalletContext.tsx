@@ -60,7 +60,10 @@ class LocalStorageManager {
   getData(): LocalStorageData {
     try {
       const balance = Number(localStorage.getItem(this.getKey(STORAGE_KEYS.BALANCE))) || 0;
-      const transactions = JSON.parse(localStorage.getItem(this.getKey(STORAGE_KEYS.TRANSACTIONS)) || '[]');
+      const transactions = JSON.parse(localStorage.getItem(this.getKey(STORAGE_KEYS.TRANSACTIONS)) || '[]').map((t: any) => ({
+        ...t,
+        timestamp: new Date(t.timestamp)
+      }));
       const pendingSync = JSON.parse(localStorage.getItem(this.getKey(STORAGE_KEYS.PENDING_SYNC)) || '[]');
       const lastSync = Number(localStorage.getItem(this.getKey(STORAGE_KEYS.LAST_SYNC))) || 0;
 
